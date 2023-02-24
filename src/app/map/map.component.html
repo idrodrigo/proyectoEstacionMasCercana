@@ -1,0 +1,16 @@
+<p>map works!!!!</p>
+
+<agm-map [latitude]="latitud" [longitude]="longitud" [zoom]="5" [mapTypeId]="'satellite'"> 
+    <agm-marker [latitude]="latitud" [longitude]="longitud">
+
+    </agm-marker>
+
+    <agm-marker *ngFor="let station of stations" [latitude]="station.lat" [longitude]="station.lon" >
+        <agm-info-window> 
+            <h4>{{ station.name}}</h4>
+            <p>Capacidad: {{station.capacity}}</p>
+           
+        </agm-info-window>
+    </agm-marker>
+</agm-map>
+
